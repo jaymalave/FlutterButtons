@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import './utils/gb_callback.dart';
 
 class GlassyButton extends StatefulWidget {
   const GlassyButton({
@@ -8,6 +9,7 @@ class GlassyButton extends StatefulWidget {
     this.color2,
     this.title,
     this.splashColor,
+    this.onTap,
   });
 
   final double? width;
@@ -16,6 +18,7 @@ class GlassyButton extends StatefulWidget {
   final Color? color2;
   final Color? splashColor;
   final String? title;
+  final GlassmorphismButtonCallback? onTap;
   @override
   _GlassyButtonState createState() => _GlassyButtonState();
 }
@@ -23,8 +26,8 @@ class GlassyButton extends StatefulWidget {
 class _GlassyButtonState extends State<GlassyButton> {
   Widget build(BuildContext build) {
     return InkWell(
+      onTap: widget.onTap!() ?? () {},
       splashColor: widget.splashColor,
-      onTap: () {},
       child: Container(
         width: widget.width ?? MediaQuery.of(context).size.width * 0.25,
         height: widget.height ?? MediaQuery.of(context).size.height * 0.05,

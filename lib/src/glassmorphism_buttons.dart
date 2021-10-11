@@ -26,7 +26,7 @@ class GlassyButton extends StatefulWidget {
 class _GlassyButtonState extends State<GlassyButton> {
   Widget build(BuildContext build) {
     return InkWell(
-      onTap: widget.onTap!() ?? () {},
+      onTap: widget.onTap!,
       splashColor: widget.splashColor,
       child: Container(
         width: widget.width ?? MediaQuery.of(context).size.width * 0.25,

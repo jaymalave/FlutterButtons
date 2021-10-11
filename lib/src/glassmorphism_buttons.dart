@@ -3,22 +3,23 @@ import './utils/gb_callback.dart';
 
 class GlassyButton extends StatefulWidget {
   const GlassyButton({
+    Key? key,
     this.height,
     this.width,
     this.color1,
     this.color2,
-    this.title,
+    required this.title,
     this.splashColor,
-    this.onTap,
-  });
+    required this.onTap,
+  }): super(key: key);
 
   final double? width;
   final double? height;
   final Color? color1;
   final Color? color2;
   final Color? splashColor;
-  final String? title;
-  final GlassmorphismButtonCallback? onTap;
+  final String title;
+  final GlassmorphismButtonCallback onTap;
   @override
   _GlassyButtonState createState() => _GlassyButtonState();
 }
@@ -26,7 +27,7 @@ class GlassyButton extends StatefulWidget {
 class _GlassyButtonState extends State<GlassyButton> {
   Widget build(BuildContext build) {
     return InkWell(
-      onTap: widget.onTap!,
+      onTap: widget.onTap,
       splashColor: widget.splashColor,
       child: Container(
         width: widget.width ?? MediaQuery.of(context).size.width * 0.25,

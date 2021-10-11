@@ -10,3 +10,7 @@ license update
 ## 0.0.3
 callback bug fix
 <b>October 11, 2021</b>
+
+## 0.0.4
+minor fixes in class properties
+<b>October 11, 2021</b>

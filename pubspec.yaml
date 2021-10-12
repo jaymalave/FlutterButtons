@@ -1,6 +1,6 @@
 name: glassmorphism_buttons
 description: A custom glassmorphism button as a flutter package.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/jaymalave/FlutterButtons
 
 environment:

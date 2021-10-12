@@ -14,3 +14,8 @@ callback bug fix
 ## 0.0.4
 minor fixes in class properties
 <b>October 11, 2021</b>
+
+## 0.0.5
+class properties, frost updates
+<b>October 12, 2021</b>
+

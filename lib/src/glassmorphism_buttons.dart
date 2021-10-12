@@ -1,23 +1,18 @@
 import "package:flutter/material.dart";
 import './utils/gb_callback.dart';
+import 'dart:ui' as ui;
 
 class GlassyButton extends StatefulWidget {
   const GlassyButton({
     Key? key,
     this.height,
     this.width,
-    this.color1,
-    this.color2,
     required this.title,
-    this.splashColor,
     required this.onTap,
-  }): super(key: key);
+  }) : super(key: key);
 
   final double? width;
   final double? height;
-  final Color? color1;
-  final Color? color2;
-  final Color? splashColor;
   final String title;
   final GlassmorphismButtonCallback onTap;
   @override
@@ -28,35 +23,50 @@ class _GlassyButtonState extends State<GlassyButton> {
   Widget build(BuildContext build) {
     return InkWell(
       onTap: widget.onTap,
-      splashColor: widget.splashColor,
-      child: Container(
-        width: widget.width ?? MediaQuery.of(context).size.width * 0.25,
-        height: widget.height ?? MediaQuery.of(context).size.height * 0.05,
-        child: Align(
-            alignment: Alignment.center,
-            child: Text(
-              '${widget.title}',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: (widget.height ?? (MediaQuery.of(context).size.height * 0.05))*0.45,
+      child: Stack(
+        fit: StackFit.loose,
+        children: [
+          ClipRect(
+            child: BackdropFilter(
+              filter: ui.ImageFilter.blur(
+                sigmaX: 5.0,
+                sigmaY: 5.0,
+              ),
+              child: Container(
+                width: widget.width ?? MediaQuery.of(context).size.width * 0.25,
+                height:
+                    widget.height ?? MediaQuery.of(context).size.height * 0.05,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    '${widget.title}',
+                    textAlign: TextAlign.center,
+                    //dynamic font size
+                    style: TextStyle(
+                      fontSize: (widget.height ??
+                              (MediaQuery.of(context).size.height * 0.05)) *
+                          0.45,
+                    ),
+                  ),
                 ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        const Color(0xFFFFFF).withOpacity(0.2),
+                        const Color(0xFFFFFF).withOpacity(0.3),
+                      ],
+                      stops: [
+                        0.5,
+                        0.7,
+                      ]),
+                ),
+              ),
             ),
           ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              widget.color1 ?? const Color(0xcf90be).withOpacity(0.3),
-              widget.color2 ?? const Color(0xffc3f0).withOpacity(0.8),
-            ],
-            stops: [
-              0.5,
-              0.7,
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }

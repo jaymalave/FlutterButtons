@@ -37,7 +37,11 @@ class _GlassyButtonState extends State<GlassyButton> {
             child: Text(
               '${widget.title}',
               textAlign: TextAlign.center,
-            )),
+              style: TextStyle(
+                fontSize: (widget.height ?? (MediaQuery.of(context).size.height * 0.05))*0.45,
+                ),
+            ),
+          ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(5)),
           gradient: LinearGradient(

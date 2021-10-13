@@ -1,4 +1,4 @@
-# Glassmorphism Package
+# Glassmorphism Button
 A custom glassmorphism button as a flutter package.
 
 
@@ -29,6 +29,10 @@ GlassyButton{
     }
 }
 ```
+**Rendered Output**  
+
+<img width="216" alt="Rendered output" src="https://user-images.githubusercontent.com/73488443/137120200-0465f2bd-39fa-4930-b6f5-ae21f2d10ff5.png">
+
 
 ## License📝
 

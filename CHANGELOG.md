@@ -19,3 +19,15 @@ minor fixes in class properties
 class properties, frost updates
 <b>October 12, 2021</b>
 
+## 0.0.6
+documentation update
+<b>October 12, 2021</b>
+
+## 0.0.7
+documentation update fix
+<b>October 12, 2021</b>
+
+## 0.0.8
+button screenshots in documentation
+<b>October 13, 2021</b>
+
